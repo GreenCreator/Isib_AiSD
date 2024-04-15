@@ -1,2 +1,2 @@
-# Isib_AiSD-C-
+# Isib_AiSD
 АиСД &amp; С++
