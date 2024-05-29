@@ -1,4 +1,5 @@
 #include <iostream>
+
 //TODO: bullshit
 int main() {
   int n, m;
