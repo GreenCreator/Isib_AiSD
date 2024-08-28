@@ -1,31 +1,14 @@
 #include <iostream>
-#include <cmath>
-#include <cstdint>
 
-
-void ChangeStatus(bool *A, int value, int size) {
-    for (int i = value * value; i <= size; i += value) {
-        A[i] = false;
-    }
-}
-
+class Base { virtual void dummy() {} };
+class Derived : public Base { /* ... */ };
 
 int main() {
-    size_t n;
-    std::cin >> n;
-    bool A[n + 1];
-    for (int i = 2; i <= n; ++i) {
-        A[i] = true;
-    }
+    Base* base_ptr = new Derived;
 
-    for (int i = 2; i * i <= n; ++i) {
+    // Using typeid to get the type of the object
+    std::cout << "Type: " << typeid(*base_ptr).name() << '\n';
 
-        if (A[i])
-            ChangeStatus(A, i, n);
-    }
-
-    for (int i = 2; i <= n; ++i) {
-        if (A[i])
-            std::cout << i << std::endl;
-    }
+    delete base_ptr;
+    return 0;
 }
