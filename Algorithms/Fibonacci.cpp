@@ -23,12 +23,13 @@ uint64_t fib_dynamic(int n) {
 }
 
 int main() {
-    std::cout << "Dynamic Fibonacci: " << std::endl;
+    uint64_t (*fib)(int);
+    size_t vers = 0;
+    std::cout << "Which version of Fibonacci func use? (0 - recurvie, 1 - dynamic)" << std::endl;
+    std::cin >> vers;
+    fib = vers == 0 ? fib_recursive : fib_dynamic;
+
     for (int n = 0; n < 60; ++n) {
-        std::cout << n << '\t' << fib_dynamic(n) << std::endl;
-    }
-    std::cout << "Recursive Fibonacci: " << std::endl;
-    for (int n = 0; n < 60; ++n) {
-        std::cout << n << '\t' << fib_recursive(n) << std::endl;
+        std::cout << n << '\t' << fib(n) << std::endl;
     }
 }
