@@ -75,11 +75,11 @@ void InserionSort(int *arr, int size) {
 
 
 int main() {
-
-    int arr[]{5, 4, 4, 4, 1};
-    int size_arr = sizeof(arr) / sizeof(arr[0]);
-    SelectionSort(arr, size_arr);
-    std::cout << BinarySearch(arr, size_arr, 5) << std::endl;
+    std::cout << Euclid(12, 15);
+//    int arr[]{5, 4, 4, 4, 1};
+//    int size_arr = sizeof(arr) / sizeof(arr[0]);
+//    SelectionSort(arr, size_arr);
+//    std::cout << BinarySearch(arr, size_arr, 5) << std::endl;
     return 0;
 }
 
