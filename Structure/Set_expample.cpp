@@ -2,7 +2,6 @@
 #include <iostream>
 #include <algorithm>
 #include <list>
-#include <queue>
 #include <set>
 
 void procedure(int x) {
@@ -32,6 +31,15 @@ int main() {
     std::cout << std::endl;
     for (auto &elem: words) {
         std::cout << elem << " ";
+    }
+    std::cout << std::endl;
+    std::cout << "Enter key to find in set: ";
+    int number;
+    std::cin >> number;
+    if (words.find(number) != words.end()) {
+        std::cout << "Find! elem in " << *words.find(number);
+    } else {
+        std::cout << "Not found";
     }
 
     return 0;
